@@ -1,0 +1,48 @@
+body {
+    background-color: #0099ff;
+    height: 100%;
+}
+
+h1 {
+    position: relative;
+    color: #344ac8;
+}
+
+button {
+    background-color: white;
+    width: 25%;
+    height: 10%;
+    border: black;
+    border-style: solid;
+}
+
+div {
+    position: absolute;
+    height: 70%;
+    width: 40%;
+    top: 100px;
+
+}
+
+.div0 {
+    background-color: #4f60bd;
+    border: black;
+    border-style: solid;
+    margin-left: 10%;
+}
+
+.div1 {
+    background-color: #344ac8;
+    border: black;
+    border-style: solid;
+    margin-left: 50%;
+
+}
+
+span {
+    position: fixed;
+    background-color: #8cc6f0;
+    padding: 3 px;
+    border: black;
+    font-size: 15px;
+}

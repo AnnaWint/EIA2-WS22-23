@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(255, 187, 0);
+    text-align: center;
+
+}
+
+.entry1 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(242, 211, 125);
+    border: solid;
+    border-color: white;
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment {
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+
+.action {
+    margin-top: 3%;
+}
+
+
+.entry {
+    width: 45%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.checkbox {
+    width: auto;
+}

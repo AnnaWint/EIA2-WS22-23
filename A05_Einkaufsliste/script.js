@@ -1,17 +1,20 @@
-var A04_Einkaufsliste;
-(function (A04_Einkaufsliste) {
+var A05_Einkaufsliste;
+(function (A05_Einkaufsliste) {
     /*
-           Aufgabe: <A04_Einkaufsliste>
+           Aufgabe: <A05_Einkaufsliste>
            Name: <Anna Wintermantel>
            Matrikel: <271140>
-           Datum: < 05.11.2022   >
+           Datum: < 10.11.2022   >
            Quellen: Alina Hahn
            */
     window.addEventListener("load", createListener);
-    function createListener() {
+    async function createListener() {
+        let response = await fetch("");
+        let offer = await response.text();
+        let data = JSON.parse(offer);
         let addButton = document.querySelector(".creat");
         addButton.addEventListener("click", createEntry);
-        datalist(A04_Einkaufsliste.data);
+        datalist(data);
     }
     function datalist(_data) {
         let name;
@@ -84,5 +87,5 @@ var A04_Einkaufsliste;
     function editEntry() {
         console.log("Der Eintrag wird bearbeitet.");
     }
-})(A04_Einkaufsliste || (A04_Einkaufsliste = {}));
+})(A05_Einkaufsliste || (A05_Einkaufsliste = {}));
 //# sourceMappingURL=script.js.map

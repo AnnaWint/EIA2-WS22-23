@@ -1,18 +1,37 @@
-namespace A04_Einkaufsliste {
+namespace A05_Einkaufsliste {
 
     /*
-           Aufgabe: <A04_Einkaufsliste>
+           Aufgabe: <A05_Einkaufsliste>
            Name: <Anna Wintermantel>
            Matrikel: <271140>
-           Datum: < 05.11.2022   >
+           Datum: < 10.11.2022   >
            Quellen: Alina Hahn
            */
 
 
     window.addEventListener("load", createListener);
 
+    
 
-    function createListener(): void {
+    export interface Item {
+        name: string;
+        amount: number;
+        comment: string;
+        check: boolean;
+        date: string;
+    }
+
+    export interface Data {
+        [entry: string]: Item[];
+    }
+
+   async function createListener(): Promise<void> {
+
+    let response: Response = await fetch("");
+    let offer: string = await response.text();
+    let data: Data = JSON.parse(offer);
+
+
         let addButton: Element = document.querySelector(".creat");
 
         addButton.addEventListener("click", createEntry);

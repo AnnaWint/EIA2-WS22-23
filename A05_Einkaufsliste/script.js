@@ -9,7 +9,7 @@ var A05_Einkaufsliste;
            */
     window.addEventListener("load", createListener);
     async function createListener() {
-        let response = await fetch("");
+        let response = await fetch("https://annawint.github.io/EIA2-WS22-23/A05_Einkaufsliste/data.json");
         let offer = await response.text();
         let data = JSON.parse(offer);
         let addButton = document.querySelector(".creat");

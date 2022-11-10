@@ -11,7 +11,7 @@ namespace A05_Einkaufsliste {
 
     window.addEventListener("load", createListener);
 
-    
+
 
     export interface Item {
         name: string;
@@ -25,17 +25,17 @@ namespace A05_Einkaufsliste {
         [entry: string]: Item[];
     }
 
-   async function createListener(): Promise<void> {
+    async function createListener(): Promise<void> {
 
-    let response: Response = await fetch("");
-    let offer: string = await response.text();
-    let data: Data = JSON.parse(offer);
+        let response: Response = await fetch("https://annawint.github.io/EIA2-WS22-23/A05_Einkaufsliste/data.json");
+        let offer: string = await response.text();
+        let data: Data = JSON.parse(offer);
 
 
         let addButton: Element = document.querySelector(".creat");
 
         addButton.addEventListener("click", createEntry);
-        
+
         datalist(data);
     }
 
@@ -86,8 +86,8 @@ namespace A05_Einkaufsliste {
 
         creatItems(i);
 
-           
-            
+
+
     }
 
     function deleteEntry(): void {
@@ -125,14 +125,14 @@ namespace A05_Einkaufsliste {
         trash.innerHTML = '<i class="fa-solid fa-trash"></i>';
         checked.type = "checkbox";
 
-        
+
 
         label.innerHTML += _element.name + ", " + _element.amount + ", " + _element.comment + ", ";
         date.innerHTML += "Zuletzt gekauft am: " + _element.date;
         date.classList.add("dateString");
         div.append(checked, trash, label, date);
 
-        
+
         list.append(div);
     }
 

@@ -35,8 +35,20 @@ namespace A05_Einkaufsliste {
         let addButton: Element = document.querySelector(".creat");
 
         addButton.addEventListener("click", createEntry);
+        addButton.addEventListener("click", sendingOder);
 
         datalist(data);
+    }
+
+
+    async function sendingOder(_event: Event): Promise<void> {
+        console.log("Eintrag versendet");
+        let form: HTMLFormElement = <HTMLFormElement>document.querySelector("form");
+        let formData: FormData = new FormData(form);
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        await fetch("https://annawint.github.io/EIA2-WS22-23/A05_Einkaufsliste/A05_Einkaufsliste.html?" + query.toString());
+        alert("Eintrag gesendet!");
+
     }
 
     function datalist(_data: Data): void {

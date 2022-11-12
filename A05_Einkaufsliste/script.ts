@@ -5,7 +5,7 @@ namespace A05_Einkaufsliste {
            Name: <Anna Wintermantel>
            Matrikel: <271140>
            Datum: < 10.11.2022   >
-           Quellen: Alina Hahn
+           Quellen: Zusammengearbeitet mit Alina Hahn
            */
 
 

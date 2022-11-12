@@ -14,7 +14,16 @@ var A05_Einkaufsliste;
         let data = JSON.parse(offer);
         let addButton = document.querySelector(".creat");
         addButton.addEventListener("click", createEntry);
+        addButton.addEventListener("click", sendingOder);
         datalist(data);
+    }
+    async function sendingOder(_event) {
+        console.log("Eintrag versendet");
+        let form = document.querySelector("form");
+        let formData = new FormData(form);
+        let query = new URLSearchParams(formData);
+        await fetch("https://annawint.github.io/EIA2-WS22-23/A05_Einkaufsliste/A05_Einkaufsliste.html?" + query.toString());
+        alert("Eintrag gesendet!");
     }
     function datalist(_data) {
         let name;

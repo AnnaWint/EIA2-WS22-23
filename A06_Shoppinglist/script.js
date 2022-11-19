@@ -1,15 +1,16 @@
-var A05_Einkaufsliste;
-(function (A05_Einkaufsliste) {
+var A06_Shoppinglist;
+(function (A06_Shoppinglist) {
     /*
-           Aufgabe: <A05_Einkaufsliste>
+           Aufgabe: <A06_Shoppinglist>
            Name: <Anna Wintermantel>
            Matrikel: <271140>
-           Datum: < 10.11.2022   >
+           Datum: < 17.11.2022   >
            Quellen: Zusammengearbeitet mit Alina Hahn
            */
     window.addEventListener("load", createListener);
+    let url = "https://webuser.hs-furtwangen.de/~winterma/Shoppinglist%20Server/";
     async function createListener() {
-        let response = await fetch("https://annawint.github.io/EIA2-WS22-23/A05_Einkaufsliste/data.json");
+        let response = await fetch("data.json");
         let offer = await response.text();
         let data = JSON.parse(offer);
         let addButton = document.querySelector(".creat");
@@ -21,7 +22,16 @@ var A05_Einkaufsliste;
         console.log("Eintrag versendet");
         let form = document.querySelector("form");
         let formData = new FormData(form);
-        let query = new URLSearchParams(formData);
+        let json = {};
+        for (let key of formData.keys())
+            if (!json[key]) {
+                let values = formData.getAll(key);
+                json[key] = values.length > 1 ? values : values[0];
+            }
+        let query = new URLSearchParams();
+        query.set("command", "insert");
+        query.set("collection", "Orders");
+        query.set("data", JSON.stringify(json));
         await fetch("https://annawint.github.io/EIA2-WS22-23/A05_Einkaufsliste/A05_Einkaufsliste.html?" + query.toString());
         alert("Eintrag gesendet!");
     }
@@ -96,5 +106,5 @@ var A05_Einkaufsliste;
     function editEntry() {
         console.log("Der Eintrag wird bearbeitet.");
     }
-})(A05_Einkaufsliste || (A05_Einkaufsliste = {}));
+})(A06_Shoppinglist || (A06_Shoppinglist = {}));
 //# sourceMappingURL=script.js.map

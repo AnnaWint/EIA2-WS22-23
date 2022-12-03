@@ -5,7 +5,7 @@ var A08_GenerativeArt;
        Name: <Anna Wintermantel>
        Matrikel: <271140>
        Datum: < 24.11.2022   >
-       Quellen:
+       Quellen: Alina Hahn , PIa Giovannelli
        */
     window.addEventListener("load", handleload);
     let canvas;

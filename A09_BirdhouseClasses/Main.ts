@@ -32,7 +32,7 @@ namespace A09_BirdhouseClasses {
 
 
     function handleLoad(): void {
-        console.log("load");
+        // console.log("load");
 
         canvas = <HTMLCanvasElement>document.querySelector("canvas");
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
@@ -44,7 +44,7 @@ namespace A09_BirdhouseClasses {
     }
 
     function createSnowflakes(): void {
-        console.log("create Snowflakes");
+        // console.log("create Snowflakes");
 
         for (let i: number = 0; i < 250; i++) {
             let snowflake: Snowflake = new Snowflake();
@@ -60,7 +60,7 @@ namespace A09_BirdhouseClasses {
     }
 
     function update(): void {
-        console.log("update");
+        // console.log("update");
         crc2.putImageData(background, 0, 0);
 
         for (let snowflake of snowflakes) {
@@ -77,7 +77,7 @@ namespace A09_BirdhouseClasses {
 
     }
     function drawStanding(): void {
-        console.log("draw standing ");
+        // console.log("draw standing ");
 
         let x: number = randomNumber(0, canvas.width);
         let y: number = randomNumber(600, 800);

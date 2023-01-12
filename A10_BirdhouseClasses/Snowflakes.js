@@ -7,15 +7,7 @@ var A10_BirdhouseClasses;
               Datum: < 12.01.2023   >
               Quellen:
               */
-    class Snowflake {
-        position;
-        velocity;
-        constructor() {
-            console.log("Snowflake constructor");
-            this.position = new A10_BirdhouseClasses.Vector(0, 0);
-            this.velocity = new A10_BirdhouseClasses.Vector(0, 0);
-            this.velocity.random(100, 200);
-        }
+    class Snowflake extends A10_BirdhouseClasses.Movableojects {
         draw() {
             console.log("draw Snowflake");
             A10_BirdhouseClasses.crc2.save();

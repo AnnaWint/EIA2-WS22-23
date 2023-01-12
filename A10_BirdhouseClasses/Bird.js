@@ -7,14 +7,11 @@ var A10_BirdhouseClasses;
        Datum: < 12.01.2023   >
        Quellen:
        */
-    class Bird {
-        position;
-        velocity;
+    class Bird extends A10_BirdhouseClasses.Movableojects {
         type;
         color;
         constructor(_color) {
-            this.position = new A10_BirdhouseClasses.Vector(0, 0);
-            this.velocity = new A10_BirdhouseClasses.Vector(0, 0);
+            super();
             this.color = _color;
         }
         moveFlying(_timeslice) {

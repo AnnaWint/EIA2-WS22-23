@@ -5,40 +5,39 @@ var A10_BirdhouseClasses;
               Name: <Anna Wintermantel>
               Matrikel: <271140>
               Datum: < 12.01.2023 >
-              Quellen:
+              Quellen: Alina Hahn
               */
     window.addEventListener("load", handleLoad);
     let horizont = 0.6;
     let background;
-    let snowflakes = [];
-    let birds = [];
+    let moveable = [];
     function handleLoad() {
         // console.log("load");
         A10_BirdhouseClasses.canvas = document.querySelector("canvas");
         A10_BirdhouseClasses.crc2 = A10_BirdhouseClasses.canvas.getContext("2d");
         drawBackground();
-        createSnowflakes();
+        createmovableobjects();
         setInterval(update, 20);
     }
-    function createSnowflakes() {
+    function createmovableobjects() {
         // console.log("create Snowflakes");
         for (let i = 0; i < 250; i++) {
             let snowflake = new A10_BirdhouseClasses.Snowflake();
-            snowflakes.push(snowflake);
+            moveable.push(snowflake);
         }
         for (let iBird = 0; iBird < 15; iBird++) {
             let bird = new A10_BirdhouseClasses.Bird("red");
-            birds.push(bird);
+            moveable.push(bird);
         }
     }
     function update() {
         // console.log("update");
         A10_BirdhouseClasses.crc2.putImageData(background, 0, 0);
-        for (let snowflake of snowflakes) {
+        for (let snowflake of moveable) {
             snowflake.move(1 / 50);
             snowflake.draw();
         }
-        for (let bird of birds) {
+        for (let bird of moveable) {
             bird.drawFlying();
             bird.moveFlying(1 / 200);
         }
@@ -70,6 +69,7 @@ var A10_BirdhouseClasses;
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min) + min);
     }
+    A10_BirdhouseClasses.randomNumber = randomNumber;
     function drawBackground() {
         let gradient = A10_BirdhouseClasses.crc2.createLinearGradient(0, 0, 0, A10_BirdhouseClasses.crc2.canvas.height);
         gradient.addColorStop(0, "#94CEFF");

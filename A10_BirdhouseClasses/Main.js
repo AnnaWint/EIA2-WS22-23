@@ -1,11 +1,11 @@
-var A09_BirdhouseClasses;
-(function (A09_BirdhouseClasses) {
+var A10_BirdhouseClasses;
+(function (A10_BirdhouseClasses) {
     /*
-              Aufgabe: <A09_BirdhouseClasses>
+              Aufgabe: <A10_BirdhouseClasses>
               Name: <Anna Wintermantel>
               Matrikel: <271140>
-              Datum: < 17.12.2022 >
-              Quellen: < Lisa Blindenhöfer, Alina Hahn >
+              Datum: < 12.01.2023 >
+              Quellen:
               */
     window.addEventListener("load", handleLoad);
     let horizont = 0.6;
@@ -14,8 +14,8 @@ var A09_BirdhouseClasses;
     let birds = [];
     function handleLoad() {
         // console.log("load");
-        A09_BirdhouseClasses.canvas = document.querySelector("canvas");
-        A09_BirdhouseClasses.crc2 = A09_BirdhouseClasses.canvas.getContext("2d");
+        A10_BirdhouseClasses.canvas = document.querySelector("canvas");
+        A10_BirdhouseClasses.crc2 = A10_BirdhouseClasses.canvas.getContext("2d");
         drawBackground();
         createSnowflakes();
         setInterval(update, 20);
@@ -23,17 +23,17 @@ var A09_BirdhouseClasses;
     function createSnowflakes() {
         // console.log("create Snowflakes");
         for (let i = 0; i < 250; i++) {
-            let snowflake = new A09_BirdhouseClasses.Snowflake();
+            let snowflake = new A10_BirdhouseClasses.Snowflake();
             snowflakes.push(snowflake);
         }
         for (let iBird = 0; iBird < 15; iBird++) {
-            let bird = new A09_BirdhouseClasses.Bird("red");
+            let bird = new A10_BirdhouseClasses.Bird("red");
             birds.push(bird);
         }
     }
     function update() {
         // console.log("update");
-        A09_BirdhouseClasses.crc2.putImageData(background, 0, 0);
+        A10_BirdhouseClasses.crc2.putImageData(background, 0, 0);
         for (let snowflake of snowflakes) {
             snowflake.move(1 / 50);
             snowflake.draw();
@@ -45,25 +45,25 @@ var A09_BirdhouseClasses;
     }
     function drawStanding() {
         // console.log("draw standing ");
-        let x = randomNumber(0, A09_BirdhouseClasses.canvas.width);
+        let x = randomNumber(0, A10_BirdhouseClasses.canvas.width);
         let y = randomNumber(600, 800);
-        A09_BirdhouseClasses.crc2.save();
-        A09_BirdhouseClasses.crc2.translate(x, y);
-        A09_BirdhouseClasses.crc2.beginPath();
-        A09_BirdhouseClasses.crc2.fillStyle = "red";
-        A09_BirdhouseClasses.crc2.arc(0, 0, 10, 0, 2 * Math.PI);
-        A09_BirdhouseClasses.crc2.ellipse(-25, 20, 10, 25, 20, 0, 360);
-        A09_BirdhouseClasses.crc2.moveTo(-30, 30);
-        A09_BirdhouseClasses.crc2.lineTo(-30, 53);
-        A09_BirdhouseClasses.crc2.moveTo(-25, 30);
-        A09_BirdhouseClasses.crc2.lineTo(-25, 53);
-        A09_BirdhouseClasses.crc2.fill();
-        A09_BirdhouseClasses.crc2.moveTo(1, -5);
-        A09_BirdhouseClasses.crc2.lineTo(20, -5);
-        A09_BirdhouseClasses.crc2.lineTo(1, 2);
-        A09_BirdhouseClasses.crc2.stroke();
-        A09_BirdhouseClasses.crc2.strokeStyle = "red";
-        A09_BirdhouseClasses.crc2.restore();
+        A10_BirdhouseClasses.crc2.save();
+        A10_BirdhouseClasses.crc2.translate(x, y);
+        A10_BirdhouseClasses.crc2.beginPath();
+        A10_BirdhouseClasses.crc2.fillStyle = "red";
+        A10_BirdhouseClasses.crc2.arc(0, 0, 10, 0, 2 * Math.PI);
+        A10_BirdhouseClasses.crc2.ellipse(-25, 20, 10, 25, 20, 0, 360);
+        A10_BirdhouseClasses.crc2.moveTo(-30, 30);
+        A10_BirdhouseClasses.crc2.lineTo(-30, 53);
+        A10_BirdhouseClasses.crc2.moveTo(-25, 30);
+        A10_BirdhouseClasses.crc2.lineTo(-25, 53);
+        A10_BirdhouseClasses.crc2.fill();
+        A10_BirdhouseClasses.crc2.moveTo(1, -5);
+        A10_BirdhouseClasses.crc2.lineTo(20, -5);
+        A10_BirdhouseClasses.crc2.lineTo(1, 2);
+        A10_BirdhouseClasses.crc2.stroke();
+        A10_BirdhouseClasses.crc2.strokeStyle = "red";
+        A10_BirdhouseClasses.crc2.restore();
     }
     function randomNumber(min, max) {
         min = Math.ceil(min);
@@ -71,13 +71,13 @@ var A09_BirdhouseClasses;
         return Math.floor(Math.random() * (max - min) + min);
     }
     function drawBackground() {
-        let gradient = A09_BirdhouseClasses.crc2.createLinearGradient(0, 0, 0, A09_BirdhouseClasses.crc2.canvas.height);
+        let gradient = A10_BirdhouseClasses.crc2.createLinearGradient(0, 0, 0, A10_BirdhouseClasses.crc2.canvas.height);
         gradient.addColorStop(0, "#94CEFF");
         gradient.addColorStop(horizont, "#F3FAF0");
         gradient.addColorStop(1, "#BEE0F5");
-        A09_BirdhouseClasses.crc2.fillStyle = gradient;
-        A09_BirdhouseClasses.crc2.fillRect(0, 0, A09_BirdhouseClasses.crc2.canvas.width, A09_BirdhouseClasses.crc2.canvas.height);
-        let startMountain = A09_BirdhouseClasses.crc2.canvas.height * horizont;
+        A10_BirdhouseClasses.crc2.fillStyle = gradient;
+        A10_BirdhouseClasses.crc2.fillRect(0, 0, A10_BirdhouseClasses.crc2.canvas.width, A10_BirdhouseClasses.crc2.canvas.height);
+        let startMountain = A10_BirdhouseClasses.crc2.canvas.height * horizont;
         let posMountain = { x: 0, y: startMountain };
         drawSun({ x: 75, y: 75 });
         drawCloud({ x: 375, y: 150 }, { x: 325, y: 100 });
@@ -90,13 +90,13 @@ var A09_BirdhouseClasses;
         drawSnowman({ x: 500, y: 700 });
         drawBirdhouse({ x: 150, y: 800 });
         drawStanding();
-        background = A09_BirdhouseClasses.crc2.getImageData(0, 0, A09_BirdhouseClasses.crc2.canvas.width, A09_BirdhouseClasses.crc2.canvas.height);
+        background = A10_BirdhouseClasses.crc2.getImageData(0, 0, A10_BirdhouseClasses.crc2.canvas.width, A10_BirdhouseClasses.crc2.canvas.height);
     }
     function drawSun(_position) {
-        let sunCircle = A09_BirdhouseClasses.canvas.getContext("2d");
+        let sunCircle = A10_BirdhouseClasses.canvas.getContext("2d");
         let r1 = 25;
         let r2 = 150;
-        let gradient = A09_BirdhouseClasses.crc2.createRadialGradient(0, 0, r1, 0, 0, r2);
+        let gradient = A10_BirdhouseClasses.crc2.createRadialGradient(0, 0, r1, 0, 0, r2);
         gradient.addColorStop(0, "HSLA(60, 100%, 90%, 1)");
         gradient.addColorStop(1, "HSLA(60, 100%, 50%, 0)");
         sunCircle.save();
@@ -107,11 +107,11 @@ var A09_BirdhouseClasses;
         sunCircle.restore();
     }
     function drawCloud(_position, _size) {
-        let cloudCircle = A09_BirdhouseClasses.canvas.getContext("2d");
+        let cloudCircle = A10_BirdhouseClasses.canvas.getContext("2d");
         let nParicles = 20;
         let radiusParticle = 50;
         let particle = new Path2D();
-        let gradient = A09_BirdhouseClasses.crc2.createRadialGradient(0, 0, 0, 0, 0, radiusParticle);
+        let gradient = A10_BirdhouseClasses.crc2.createRadialGradient(0, 0, 0, 0, 0, radiusParticle);
         particle.arc(0, 0, radiusParticle, 0, 2 * Math.PI);
         gradient.addColorStop(0, "HSLA(0, 100%, 100%, 0.5)");
         gradient.addColorStop(1, "HSLA(0, 100%, 100%, 0)");
@@ -129,7 +129,7 @@ var A09_BirdhouseClasses;
         cloudCircle.restore();
     }
     function drawMountain(_position, _min, _max, _colorLow, _colorHigh) {
-        let mountainLine = A09_BirdhouseClasses.canvas.getContext("2d");
+        let mountainLine = A10_BirdhouseClasses.canvas.getContext("2d");
         let stepMin = 100;
         let stepMax = 200;
         let x = 0;
@@ -153,7 +153,7 @@ var A09_BirdhouseClasses;
         mountainLine.restore();
     }
     function drawTree(_position, _max) {
-        let tree = A09_BirdhouseClasses.canvas.getContext("2d");
+        let tree = A10_BirdhouseClasses.canvas.getContext("2d");
         tree.save();
         tree.translate(_position.x, _position.y);
         tree.beginPath();
@@ -172,7 +172,7 @@ var A09_BirdhouseClasses;
         tree.restore();
     }
     function drawSnowman(_position) {
-        let snowmanCircle = A09_BirdhouseClasses.canvas.getContext("2d");
+        let snowmanCircle = A10_BirdhouseClasses.canvas.getContext("2d");
         let r1 = 60;
         let r2 = 50;
         let r3 = 40;
@@ -190,7 +190,7 @@ var A09_BirdhouseClasses;
         snowmanCircle.restore();
     }
     function drawBirdhouse(_position) {
-        let house = A09_BirdhouseClasses.canvas.getContext("2d");
+        let house = A10_BirdhouseClasses.canvas.getContext("2d");
         house.save();
         house.translate(_position.x, _position.y);
         house.beginPath();
@@ -210,5 +210,5 @@ var A09_BirdhouseClasses;
         house.stroke();
         house.restore();
     }
-})(A09_BirdhouseClasses || (A09_BirdhouseClasses = {}));
+})(A10_BirdhouseClasses || (A10_BirdhouseClasses = {}));
 //# sourceMappingURL=Main.js.map

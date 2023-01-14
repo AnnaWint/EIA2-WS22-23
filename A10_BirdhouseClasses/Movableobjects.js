@@ -15,11 +15,9 @@ var A10_BirdhouseClasses;
                 this.position = _position;
             }
             else {
-                this.position.x = A10_BirdhouseClasses.randomNumber(0, 600);
-                this.position.y = A10_BirdhouseClasses.randomNumber(0, 800);
+                this.position = new A10_BirdhouseClasses.Vector(0, 0);
             }
-            this.velocity.x = A10_BirdhouseClasses.randomNumber(100, 200);
-            this.velocity.y = A10_BirdhouseClasses.randomNumber(100, 200);
+            this.velocity = new A10_BirdhouseClasses.Vector(0, 0);
         }
         move(_timeslice) { }
         ;

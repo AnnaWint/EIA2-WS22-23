@@ -8,31 +8,29 @@ namespace A10_BirdhouseClasses {
               Quellen: 
               */
 
-              
-export class Movableojects {
 
-    position: Vector;
-    velocity: Vector;
+    export class Movableojects {
 
-    constructor(_position?: Vector) {
-        if (this.position) {
+        position: Vector;
+        velocity: Vector;
 
-            this.position = _position;
+        constructor(_position?: Vector) {
+
+            if (this.position) {
+
+                this.position = _position;
+            }
+            else {
+                this.position = new Vector(0, 0);
+            }
+            this.velocity = new Vector(0, 0);
         }
-        else {
-            this.position.x = randomNumber(0, 600);
-            this.position.y = randomNumber(0, 800);
-        }
-        this.velocity.x = randomNumber(100, 200);
-        this.velocity.y = randomNumber(100, 200);
+        
+        move(_timeslice: number): void { };
+        moveFlying(_timeslice: number): void { };
+        draw(): void { };
+        drawFlying(): void { };
 
     }
-
-     move(_timeslice: number): void {};
-     moveFlying(_timeslice: number): void {};
-     draw(): void {};
-     drawFlying(): void {};
-     
-}
 
 }
